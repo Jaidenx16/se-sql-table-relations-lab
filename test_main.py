@@ -3,7 +3,8 @@ import pandas as pd
 from main import *
 
 def test_join_and_filter():
-    assert(df_boston.shape == (2, 2))
+    assert(df_boston.shape == (2, 3))
+    assert(list(df_boston.columns) == ['firstName', 'lastName', 'jobTitle'])
     assert(list(df_boston['firstName']) == ['Julie', 'Steve'])
     assert(df_zero_emp.shape[0] == 0)
 
@@ -31,4 +32,4 @@ def test_multiple_joins():
 
 def test_subquery():
     assert(df_under_20.shape == (15, 5))
-    assert(df_under_20.iloc[0]['firstName'] == 'Loui')
+    assert(df_under_20.iloc[0]['firstName'] == 'Andy')
